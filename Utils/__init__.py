@@ -2,6 +2,8 @@ import                                  numpy               as np
 from .utils                     import  *
 from .Plot.Koopman_Eigenvalue   import  Koopman_Eigenvalue
 from .Eigen_values              import  *
+from .Plot.Plot                 import  *
+
 # from .configuration             import  *
 def read_npz_file(file_path):
     try:

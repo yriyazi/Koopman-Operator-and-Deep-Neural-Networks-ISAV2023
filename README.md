@@ -52,6 +52,10 @@ If you find this work helpful or build upon it in your research, please consider
 ```
 [Author(s). (Year). Title of the Paper. Journal/Conference Name, Volume(Issue), Page Numbers. DOI]
 ```
+<p float="center">
+<img src="Images\alpha = 0000 gamma=0.37.png" alt="GIF Example">
+</p>
+
 
 ## Contact
 
