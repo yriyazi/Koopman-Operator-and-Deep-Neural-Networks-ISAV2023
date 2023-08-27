@@ -4,7 +4,7 @@
   <img src="Images\Duffing Oscillator (δ=0.3, α=-1.0, β=1, γ=0.2, ω=1.2).png" width="400" />
 </p>
 <p float="center">
-  <img src="Images\Duffing Oscillator (δ=0.3, α=-1.0, β=1, γ=0.2, ω=1.2).png" width="400" />
+  <img src="Images\Duffing Oscillator (δ=0.3, α=-1.0, β=1, γ=0.2, ω=1.2).png"  />
 </p>
 img src="Pictures/Segmented_Beam/102.png" width="400"
 
