@@ -1,0 +1,63 @@
+# Model hyperparameters
+learning_rate: 0.05
+batch_size: 32
+num_epochs: 5
+seed      : 43
+# valid argument = ['classification','Regression']
+task      : 'classification'
+
+# Dataset parameters
+dataset:
+  path: ./dataset
+  # valid argument = ['standardize','Normalization','nothing']
+  pre_pro : 'Normalization'
+  num_classes: 10
+  img_height: 32
+  img_width: 32
+  img_channels: 3
+  train_split: 0.8
+
+# Model architecture
+model:
+  name: 'scratch'
+  pretrained: False
+  num_classes: 10
+  #model Architecture
+  mu : 0.0
+  sigma : 1
+  bias : 0
+  # xavier initioalazation
+  Xavier : True
+  L1 : 0
+  L2 : 0 # 0.0005
+
+  #[[neuran input,mu,sigma,,bias,requlariztio_L2,activation function,drop out],...]
+  model : [
+            [16,
+            0,
+            1,
+            0,
+            0,
+            4,
+            0.0]
+            ,
+          [10,
+            0,
+            1,
+            0,
+            0,
+            5,
+            0]
+            ]
+  
+# Optimization parameters
+optimizer :
+  name: SGD
+  weight_decay    : 0.00
+  momentum        : 0.00
+
+# Scheduler parameters
+scheduler:
+  name: StepLR
+  step_size: 5
+  gamma: 0.1 

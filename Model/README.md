@@ -1,17 +1,15 @@
-# Nets Folder
+# Model Folder
 
 The "Model" folder contains modules and files related to neural network architectures.
 
 ## Table of Contents
-REWRITE
 
 - [Introduction](#introduction)
 - [Files](#files)
-  - [`ActivationFunction_test.ipynb`](#activationfunction_testipynb)
-  - [`Activation_functions.py`](#activation_functionspy)
-  - [`Layers.py`](#layerspy)
   - [`__init__.py`](#__init__py)
-  - [`optimizer.py`](#optimizerpy)
+  - [`encoder.py`](#encoderpy)
+  - [`decoder.py`](#decoderpy)
+  - [`structure.py`](#structurepy)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -19,11 +17,7 @@ REWRITE
 
 The "Model" folder is dedicated to various aspects of neural network implementation, such as layer structures, and optimization techniques. These components play a crucial role in defining and training neural networks for different tasks.
 
-## Files
 
-### `ActivationFunction_test.ipynb`
-
-An interactive Jupyter Notebook demonstrating the usage and properties of different activation functions. This notebook provides insights into the behavior and impact of various activation functions on neural network training.
 
 
 ## Contributing
