@@ -1,13 +1,19 @@
 # Leveraging Koopman Operators and Deep Neural Networks for Parameter Estimation and Future Prediction of Duffing Oscillators (ISAV_2023)
 
-<p float="center">
-  <img src="Images\Duffing Oscillator (δ=0.3, α=-1.0, β=1, γ=0.2, ω=1.2).png" width="400" />
-</p>
+
 <p float="center">
   <img src="Images\Duffing Oscillator (δ=0.3, α=-1.0, β=1, γ=0.2, ω=1.2).png"  />
 </p>
-img src="Pictures/Segmented_Beam/102.png" width="400"
 
+<p float="center">
+  <img src="Images\Duffing Oscillator (δ=0.3, α=-1.0, β=1, γ=0.29, ω=1.2).png"  />
+</p>
+
+<p float="center">
+  <img src="Images\Duffing Oscillator (δ=0.3, α=-1.0, β=1, γ=0.37, ω=1.2).png"  />
+</p>
+
+Duffing Solutions
 
 This repository contains the code and resources related to the paper titled "Leveraging Koopman Operators and Deep Neural Networks for Parameter Estimation and Future Prediction of Duffing Oscillators." In this work, we present a novel approach that combines the power of Koopman operators and deep neural networks to generate a linear representation of the Duffing oscillator. This approach enables effective parameter estimation and accurate prediction of the oscillator's future behavior. We also propose a modified loss function that enhances the training process of the deep neural network. The synergistic use of Koopman operators and deep neural networks not only simplifies the analysis of nonlinear systems but also opens up new avenues for advancing predictive modeling in various scientific and engineering fields.
 
