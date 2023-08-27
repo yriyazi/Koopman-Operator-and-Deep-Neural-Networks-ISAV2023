@@ -100,7 +100,7 @@ def train(
     sleep_time,
     Validation_save_threshold : float ,
     device                      :str        = 'cuda'    ,
-    
+    if_validation = False
     ):
 
     model       = model.to(device)
@@ -205,62 +205,62 @@ def train(
             )
         # if utils.scheduler_activate:    
         #     lr_schedulerr.step()
-            
-        model.eval()
-        mode = "val"
-        with torch.no_grad():
-            loop_val = tqdm(
-                range(ll),
-                total=ll,
-                desc="val",
-                position=0,
-                leave=True,
-            )
-            acc1 = 0
-
-            for batch_idx in loop_val:
-                optimizer.zero_grad()
-                                
-                x = data_tensor[batch_idx*prediction_input_size    :(batch_idx+1)*prediction_input_size]+(torch.rand(size=[prediction_input_size],device=device)/_divition_factr)
-                y = data_tensor[(batch_idx+1)*prediction_input_size:(batch_idx+1)*prediction_input_size+prediction_horizion]
-
-                prediction_list = torch.zeros(size=[prediction_horizion]).to(device)
-                decoder_hidden, decoder_cell = torch.zeros(size=[2,prediction_input_size],device=device), torch.zeros(size=[2,prediction_input_size],device=device)
-                for i in range(prediction_horizion):
-                    # prediction = inception.forward(x)
-                    prediction,(decoder_hidden, decoder_cell) = model.forward(x.unsqueeze(0),decoder_hidden, decoder_cell)#
-                    x =  torch.cat([x[1:],prediction],dim=0)
-                    prediction_list[i] = prediction
-                loss = criterion(prediction_list, y,model.Koopman_operator.weight)
-
-                acc1 = 0
-                length = x.shape[0]
-                loss_avg_train.update(loss.item(), length)
-            
-            
-                new_row = pd.DataFrame(
-                                        {
-                                        "model_name": model_name,
-                                        "mode": mode,
-                                        "image_type":"original",
-                                        "epoch": epoch,
-                                        "learning_rate":optimizer.param_groups[0]["lr"],
-                                        "batch_size": length,
-                                        "batch_index": batch_idx,
-                                        "loss_batch": loss.detach().item(),
-                                        "avg_train_loss_till_current_batch":None,
-                                        "avg_val_loss_till_current_batch":loss_avg_val.avg,
-                                        },
-                                        index=[0],)
-                
-                report.loc[len(report)] = new_row.values[0]
-                loop_val.set_description(f"val - iteration : {epoch}")
-                loop_val.set_postfix(
-                    loss_batch="{:.4f}".format(loss.detach().item()),
-                    avg_val_loss_till_current_batch="{:.4f}".format(loss_avg_val.avg),
-                    # accuracy_val="{:.4f}".format(acc1),
-                    refresh=True,
+        if if_validation:    
+            model.eval()
+            mode = "val"
+            with torch.no_grad():
+                loop_val = tqdm(
+                    range(ll),
+                    total=ll,
+                    desc="val",
+                    position=0,
+                    leave=True,
                 )
+                acc1 = 0
+
+                for batch_idx in loop_val:
+                    optimizer.zero_grad()
+                                    
+                    x = data_tensor[batch_idx*prediction_input_size    :(batch_idx+1)*prediction_input_size]+(torch.rand(size=[prediction_input_size],device=device)/_divition_factr)
+                    y = data_tensor[(batch_idx+1)*prediction_input_size:(batch_idx+1)*prediction_input_size+prediction_horizion]
+
+                    prediction_list = torch.zeros(size=[prediction_horizion]).to(device)
+                    decoder_hidden, decoder_cell = torch.zeros(size=[2,prediction_input_size],device=device), torch.zeros(size=[2,prediction_input_size],device=device)
+                    for i in range(prediction_horizion):
+                        # prediction = inception.forward(x)
+                        prediction,(decoder_hidden, decoder_cell) = model.forward(x.unsqueeze(0),decoder_hidden, decoder_cell)#
+                        x =  torch.cat([x[1:],prediction],dim=0)
+                        prediction_list[i] = prediction
+                    loss = criterion(prediction_list, y,model.Koopman_operator.weight)
+
+                    acc1 = 0
+                    length = x.shape[0]
+                    loss_avg_train.update(loss.item(), length)
+                
+                
+                    new_row = pd.DataFrame(
+                                            {
+                                            "model_name": model_name,
+                                            "mode": mode,
+                                            "image_type":"original",
+                                            "epoch": epoch,
+                                            "learning_rate":optimizer.param_groups[0]["lr"],
+                                            "batch_size": length,
+                                            "batch_index": batch_idx,
+                                            "loss_batch": loss.detach().item(),
+                                            "avg_train_loss_till_current_batch":None,
+                                            "avg_val_loss_till_current_batch":loss_avg_val.avg,
+                                            },
+                                            index=[0],)
+                    
+                    report.loc[len(report)] = new_row.values[0]
+                    loop_val.set_description(f"val - iteration : {epoch}")
+                    loop_val.set_postfix(
+                        loss_batch="{:.4f}".format(loss.detach().item()),
+                        avg_val_loss_till_current_batch="{:.4f}".format(loss_avg_val.avg),
+                        # accuracy_val="{:.4f}".format(acc1),
+                        refresh=True,
+                    )
                 # print('shit',loss)
             # max_Accu_validation = acc1
             # if max_Accu_validation>Validation_save_threshold and max_Accu_validation>max_Accu_validation_previous:
