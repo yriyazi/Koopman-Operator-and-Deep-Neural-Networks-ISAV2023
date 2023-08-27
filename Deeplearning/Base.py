@@ -154,7 +154,7 @@ def train(
                 prediction,(decoder_hidden, decoder_cell) = model.forward(x.unsqueeze(0),decoder_hidden, decoder_cell)#
                 x =  torch.cat([x[1:],prediction],dim=0)
                 prediction_list[i] = prediction
-            loss = criterion(prediction_list, y)
+            loss = criterion(prediction_list, y,model.Koopman_operator.weight)
 
             # Backpropagation
             loss.backward()
@@ -231,7 +231,7 @@ def train(
                     prediction,(decoder_hidden, decoder_cell) = model.forward(x.unsqueeze(0),decoder_hidden, decoder_cell)#
                     x =  torch.cat([x[1:],prediction],dim=0)
                     prediction_list[i] = prediction
-                loss = criterion(prediction_list, y)
+                loss = criterion(prediction_list, y,model.Koopman_operator.weight)
 
                 acc1 = 0
                 length = x.shape[0]

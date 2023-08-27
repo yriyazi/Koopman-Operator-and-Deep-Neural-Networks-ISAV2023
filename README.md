@@ -1,9 +1,10 @@
 # Leveraging Koopman Operators and Deep Neural Networks for Parameter Estimation and Future Prediction of Duffing Oscillators (ISAV_2023)
 
-
+<!-->
 <p float="center">
   <img src="Images\Duffing Oscillator (δ=0.3, α=-1.0, β=1, γ=0.2, ω=1.2).png"  />
 </p>
+<-->
 
 <p float="center">
   <img src="Images\Duffing Oscillator (δ=0.3, α=-1.0, β=1, γ=0.29, ω=1.2).png"  />
