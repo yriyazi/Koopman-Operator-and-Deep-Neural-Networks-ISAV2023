@@ -1,55 +1,18 @@
 # Model hyperparameters
-learning_rate: 0.05
-batch_size: 32
-num_epochs: 5
-seed      : 43
-# valid argument = ['classification','Regression']
-task      : 'classification'
+num_epochs              : 1
+seed                    : 42
 
-# Dataset parameters
-dataset:
-  path: ./dataset
-  # valid argument = ['standardize','Normalization','nothing']
-  pre_pro : 'Normalization'
-  num_classes: 10
-  img_height: 32
-  img_width: 32
-  img_channels: 3
-  train_split: 0.8
+datasets  :
+  Noise_division_factor         : 7
 
-# Model architecture
-model:
-  name: 'scratch'
-  pretrained: False
-  num_classes: 10
-  #model Architecture
-  mu : 0.0
-  sigma : 1
-  bias : 0
-  # xavier initioalazation
-  Xavier : True
-  L1 : 0
-  L2 : 0 # 0.0005
+model :
+  name                    : "CNN-RNN"
+  prediction_horizon      : 50
+  prediction_input_size   : 200
 
-  #[[neuran input,mu,sigma,,bias,requlariztio_L2,activation function,drop out],...]
-  model : [
-            [16,
-            0,
-            1,
-            0,
-            0,
-            4,
-            0.0]
-            ,
-          [10,
-            0,
-            1,
-            0,
-            0,
-            5,
-            0]
-            ]
-  
+loss  :
+  alpha   : 10
+
 # Optimization parameters
 optimizer :
   name: SGD
@@ -59,5 +22,6 @@ optimizer :
 # Scheduler parameters
 scheduler:
   name: StepLR
+  learning_rate   : 0.05
   step_size: 5
   gamma: 0.1 

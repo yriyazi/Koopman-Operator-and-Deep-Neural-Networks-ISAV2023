@@ -82,7 +82,7 @@ def train(
     
     data_tensor                 : torch.tensor,
     prediction_input_size       : int,
-    prediction_horizion         : int,
+    prediction_horizon         : int,
     _divition_factr             :int,
 
     model                       :torch.nn.Module,
@@ -122,7 +122,6 @@ def train(
                                     "avg_val_loss_till_current_batch",
                                     ])
     
-    max_Accu_validation_previous = 0
     #############################################################3#params
     ll = (data_tensor.shape[-1]//prediction_input_size)-1
     acc1 = 0
@@ -144,12 +143,12 @@ def train(
             optimizer.zero_grad()
 
             x = data_tensor[batch_idx*prediction_input_size    :(batch_idx+1)*prediction_input_size]+(torch.rand(size=[prediction_input_size],device=device)/_divition_factr)
-            y = data_tensor[(batch_idx+1)*prediction_input_size:(batch_idx+1)*prediction_input_size+prediction_horizion]
+            y = data_tensor[(batch_idx+1)*prediction_input_size:(batch_idx+1)*prediction_input_size+prediction_horizon]
 
 
-            prediction_list = torch.zeros(size=[prediction_horizion]).to(device)
+            prediction_list = torch.zeros(size=[prediction_horizon]).to(device)
             decoder_hidden, decoder_cell = torch.zeros(size=[2,prediction_input_size],device=device), torch.zeros(size=[2,prediction_input_size],device=device)
-            for i in range(prediction_horizion):
+            for i in range(prediction_horizon):
                 # prediction = inception.forward(x)
                 prediction,(decoder_hidden, decoder_cell) = model.forward(x.unsqueeze(0),decoder_hidden, decoder_cell)#
                 x =  torch.cat([x[1:],prediction],dim=0)
@@ -222,11 +221,11 @@ def train(
                     optimizer.zero_grad()
                                     
                     x = data_tensor[batch_idx*prediction_input_size    :(batch_idx+1)*prediction_input_size]+(torch.rand(size=[prediction_input_size],device=device)/_divition_factr)
-                    y = data_tensor[(batch_idx+1)*prediction_input_size:(batch_idx+1)*prediction_input_size+prediction_horizion]
+                    y = data_tensor[(batch_idx+1)*prediction_input_size:(batch_idx+1)*prediction_input_size+prediction_horizon]
 
-                    prediction_list = torch.zeros(size=[prediction_horizion]).to(device)
+                    prediction_list = torch.zeros(size=[prediction_horizon]).to(device)
                     decoder_hidden, decoder_cell = torch.zeros(size=[2,prediction_input_size],device=device), torch.zeros(size=[2,prediction_input_size],device=device)
-                    for i in range(prediction_horizion):
+                    for i in range(prediction_horizon):
                         # prediction = inception.forward(x)
                         prediction,(decoder_hidden, decoder_cell) = model.forward(x.unsqueeze(0),decoder_hidden, decoder_cell)#
                         x =  torch.cat([x[1:],prediction],dim=0)
@@ -261,10 +260,6 @@ def train(
                         # accuracy_val="{:.4f}".format(acc1),
                         refresh=True,
                     )
-                # print('shit',loss)
-            # max_Accu_validation = acc1
-            # if max_Accu_validation>Validation_save_threshold and max_Accu_validation>max_Accu_validation_previous:
-            #     torch.save(model.state_dict(), f"{report_path}/{model_name}_valid_acc {acc1}.pt")
             
     report.to_csv(os.path.join(report_path,f"{model_name}_report.csv"))
     torch.save(model.state_dict(), os.path.join(report_path,f"{model_name}.pt"))
