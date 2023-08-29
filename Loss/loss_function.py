@@ -1,11 +1,15 @@
 import torch
 import torch.nn as nn
-
+import Utils
 class custum_loss(nn.Module):
     def __init__(self, alpha=0.00001)-> None:
         super(custum_loss, self).__init__()
         self.base   = torch.nn.MSELoss()
         self.alpha  = alpha
+
+    def _eigen(layer_output):
+        return torch.real(torch.linalg.eigvals(layer_output).mean())
+
     def forward(self, 
                 predicted   :torch.Tensor,
                 ground_truth:torch.Tensor,
@@ -13,15 +17,13 @@ class custum_loss(nn.Module):
                 ) -> torch.Tensor:
 
         loss = self.base(predicted,ground_truth)
-        _temp =  torch.real(torch.linalg.eigvals(layer_output).mean())*self.alpha
-       
-        if  _temp =='nan':
-            pass
-        else:
-            loss -= _temp.item()
-        # if utils.loss_DSR:
-        #     loss += self.DSR(attention)*utils.loss_Beta
-        # if utils.loss_AVR:
-        #     loss += self.AVR(attention,Region_count)*utils.loss_Gamma
+
+        if Utils.Eigen:
+            _temp =  self._eigen(layer_output)
+            if  _temp =='nan':
+                pass
+            else:
+                loss += _temp*self.alpha
+
         return loss
     

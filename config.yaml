@@ -1,5 +1,5 @@
 # Model hyperparameters
-num_epochs              : 1
+num_epochs              : 2
 seed                    : 42
 
 datasets  :
@@ -11,7 +11,8 @@ model :
   prediction_input_size   : 200
 
 loss  :
-  alpha   : 10
+  Eigen   : False
+  alpha   : 1
 
 # Optimization parameters
 optimizer :

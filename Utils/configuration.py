@@ -13,7 +13,7 @@ Noise_division_factor       = config['datasets']['Noise_division_factor']
 
 #loss
 alpha                       = config['loss']['alpha']
-
+Eigen                       = config['loss']['Eigen']
 # Access model architecture parameters
 model_name              = config['model']['name']
 prediction_horizon      = config['model']['prediction_horizon']
