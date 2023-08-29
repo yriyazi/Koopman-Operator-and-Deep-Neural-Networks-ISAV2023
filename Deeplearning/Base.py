@@ -96,7 +96,7 @@ def train(
     
     criterion ,
     optimizer,
-    lr_schedulerr,
+    lr_scheduler,
     sleep_time,
     Validation_save_threshold : float ,
     device                      :str        = 'cuda'    ,

@@ -13,7 +13,7 @@ import torch.optim          as optim
 Utils.set_seed(42)
 device = 'cuda'
 
-npz_file_path = "Duffing_Soulution\datasets\gamma=0.37 t_span=(0, 100000) initial_conditions=[1, 0].npy"
+npz_file_path = "Duffing_Soulution\datasets\gamma=0.37 t_span=(0, 100000) initial_conditions=[0, 0.5].npy"
 loaded_data = Utils.read_npz_file(npz_file_path)
 #%%
 prediction_horizion     = 50
@@ -52,4 +52,4 @@ Utils.plot_signal_and_prediction(signal, prediction,time = (0,prediction.shape[0
                             title="Acceleration vs. Prediction", signal_label="Acceleration", prediction_label="Acceleration Predicted")
 #%% Example usage
 vector = torch.concat([x[-50:],prediction_list[:]])[:].detach().cpu().numpy()
-Utils.integrate_and_plot(vector,f"alpha = 0000 gamma=0.37",0.1,(0,vector.shape[0]//10))
+Utils.integrate_and_plot(vector,f"alpha = 0000 gamma=0.37 orgi",0.1,(0,vector.shape[0]//10))
