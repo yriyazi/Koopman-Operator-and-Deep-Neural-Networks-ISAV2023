@@ -157,19 +157,19 @@ def train(
                 prediction_list[i] = prediction
             loss = criterion(prediction_list, y,model.Koopman_operator.weight)
 
-            model , loss_2 = Loss.cacl_loss_Koopman(model=model,
-                                                    Koopman_prediction_horizon = 100,
-                                                    prediction_input_size = 200,
-                                                    data = data_tensor.unsqueeze(0),
-                                                    batch= batch_idx,
-                                                    _divition_factr = _divition_factr,
-                                                    optimizer=optimizer_koopman)
             optimizer.zero_grad()
             # Backpropagation
             loss.backward()
             # Update model parameters
             optimizer.step()
-        
+
+            model , loss_2 = Loss.cacl_loss_Koopman(model=model,
+                                                        Koopman_prediction_horizon = 20,
+                                                        prediction_input_size = 200,
+                                                        data = data_tensor.unsqueeze(0),
+                                                        batch= batch_idx,
+                                                        _divition_factr = _divition_factr,
+                                                        optimizer=optimizer_koopman)
                      
             # gradient clipping
             # max_grad_norm = 1.0
