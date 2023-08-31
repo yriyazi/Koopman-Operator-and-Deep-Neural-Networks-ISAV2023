@@ -42,7 +42,7 @@ class Encoder_Decoder(nn.Module):
         self.decoder = Decoder(self.hidden_dim, self.prediction_input_size)
 
         # Initialize Koopman operator
-        self.Koopman_operator = nn.Linear(self.hidden_dim, self.hidden_dim)
+        self.Koopman_operator = nn.Linear(self.hidden_dim, self.hidden_dim,bias =False)
 
         # Initialize reverse map for prediction transformation
         self.reverse_map = nn.Sequential(
@@ -50,6 +50,15 @@ class Encoder_Decoder(nn.Module):
             nn.ReLU(inplace=True),
             nn.Linear(5, 1),
         )
+
+    def encoder_koopman(self,
+                        x                   :torch.Tensor,):
+        # Pass input through encoder
+        out, mean, std = self.encoder(x)
+
+        # Apply Koopman operator
+        out = self.Koopman_operator(out)
+        return out, mean, std
 
     def forward(self,
                 x                   :torch.Tensor,
@@ -67,11 +76,7 @@ class Encoder_Decoder(nn.Module):
             out (torch.Tensor): Output prediction tensor.
             (decoder_hidden, decoder_cell): Updated decoder hidden and cell states.
         """
-        # Pass input through encoder
-        out, mean, std = self.encoder(x)
-
-        # Apply Koopman operator
-        out = self.Koopman_operator(out)
+        out, mean, std = self.encoder_koopman(x)
 
         # Pass through decoder
         out, (decoder_hidden, decoder_cell) = self.decoder(out, decoder_hidden, decoder_cell)

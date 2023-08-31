@@ -1,6 +1,7 @@
 import  os
 import  torch
 import  time
+import  Loss
 import  torch.nn    as      nn
 import  pandas      as      pd
 from    torch.optim import  lr_scheduler
@@ -96,6 +97,7 @@ def train(
     
     criterion ,
     optimizer,
+    optimizer_koopman,
     lr_scheduler,
     sleep_time,
     Validation_save_threshold : float ,
@@ -155,6 +157,14 @@ def train(
                 prediction_list[i] = prediction
             loss = criterion(prediction_list, y,model.Koopman_operator.weight)
 
+            model , loss_2 = Loss.cacl_loss_Koopman(model=model,
+                                                    Koopman_prediction_horizon = 100,
+                                                    prediction_input_size = 200,
+                                                    data = data_tensor.unsqueeze(0),
+                                                    batch= batch_idx,
+                                                    _divition_factr = _divition_factr,
+                                                    optimizer=optimizer_koopman)
+            optimizer.zero_grad()
             # Backpropagation
             loss.backward()
             # Update model parameters
