@@ -3,16 +3,20 @@ num_epochs              : 2
 seed                    : 42
 
 datasets  :
-  Noise_division_factor         : 7
+  Noise_division_factor : 7
 
 model :
   name                    : "CNN-RNN"
   prediction_horizon      : 50
   prediction_input_size   : 200
+  # Encoder
+
+  # Decoder
+  RNN_NumLayer            : 2
 
 loss  :
-  Eigen   : False
-  alpha   : 1
+  Eigen           : False
+  alpha           : 1
 
 # Optimization parameters
 optimizer :
@@ -24,5 +28,5 @@ optimizer :
 scheduler:
   name: StepLR
   learning_rate   : 0.05
-  step_size: 5
-  gamma: 0.1 
+  step_size       : 5
+  gamma           : 0.1 

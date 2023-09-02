@@ -28,12 +28,17 @@ def cacl_loss_Koopman(model,
     # Koopman_Evolution[0,:,:] = model.Koopman_operator.weight.detach().clone()
 
     optimizer.zero_grad()
+    with torch.inference_mode():
+        _data = data[:,(batch*prediction_input_size)+i    :((batch+1)*prediction_input_size)+i]+(
+                                                        (2*torch.rand(size=[prediction_input_size],device=device)-1)/(_divition_factr*2))
+         # give input at time t_0
+        input_for_koopman = model.encoder.forward(_data.cuda())[0].detach()
+
+
     for i in range(Koopman_prediction_horizon):
         _data = data[:,(batch*prediction_input_size)+i    :((batch+1)*prediction_input_size)+i]+(
                                                     (2*torch.rand(size=[prediction_input_size],device=device)-1)/(_divition_factr*2))
-        with torch.inference_mode():
-            # give input at time t_0
-            input_for_koopman = model.encoder.forward(_data.cuda())[0].detach()
+        with torch.inference_mode():            
             # give input at time t_n to calculate the input for RNN
             Koopman_y[i,:,:] = model.encoder_koopman(_data.cuda())[0].detach()
         _Koopman_Evolution = torch.matrix_power(model.Koopman_operator.weight, i)

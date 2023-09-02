@@ -1,4 +1,5 @@
 import torch
+import Utils
 import torch.nn as nn
 from .encoder import *
 from .decoder import *
@@ -26,7 +27,8 @@ class Encoder_Decoder(nn.Module):
             Forward pass through the Encoder-Decoder model.
     """
 
-    def __init__(self, prediction_input_size: int)->None:
+    def __init__(self,
+                 prediction_input_size: int = Utils.prediction_input_size)->None:
         """
         Initialize the Encoder_Decoder instance.
 
@@ -39,7 +41,9 @@ class Encoder_Decoder(nn.Module):
 
         # Initialize encoder and decoder
         self.encoder = InceptionBlock()
-        self.decoder = Decoder(self.hidden_dim, self.prediction_input_size)
+        self.decoder = Decoder(data_steps_used_for_prediction   = self.hidden_dim,
+                               hidden_size                      = self.prediction_input_size,
+                               num_layers                       = Utils.RNN_NumLayer )
 
         # Initialize Koopman operator
         self.Koopman_operator = nn.Linear(self.hidden_dim, self.hidden_dim,bias =False)

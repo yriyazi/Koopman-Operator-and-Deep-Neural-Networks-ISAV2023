@@ -14,10 +14,14 @@ Noise_division_factor       = config['datasets']['Noise_division_factor']
 #loss
 alpha                       = config['loss']['alpha']
 Eigen                       = config['loss']['Eigen']
+
 # Access model architecture parameters
 model_name              = config['model']['name']
 prediction_horizon      = config['model']['prediction_horizon']
 prediction_input_size   = config['model']['prediction_input_size']
+
+# Decoder
+RNN_NumLayer            = config['model']['RNN_NumLayer']
 
 # Access optimizer parameters
 optimizer_name      = config['optimizer']['name']

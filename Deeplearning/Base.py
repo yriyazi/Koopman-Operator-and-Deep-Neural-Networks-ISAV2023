@@ -145,7 +145,7 @@ def train(
             optimizer.zero_grad()
 
             x = data_tensor[batch_idx*prediction_input_size    :(batch_idx+1)*prediction_input_size]+((2*torch.rand(size=[prediction_input_size],device=device)-1)/(_divition_factr*2))
-            y = data_tensor[(batch_idx+1)*prediction_input_size:(batch_idx+1)*prediction_input_size+prediction_horizon]
+            y = data_tensor[(batch_idx+1)*prediction_input_size:(batch_idx+1)*prediction_input_size+prediction_horizon]+((2*torch.rand(size=[prediction_horizon],device=device)-1)/(_divition_factr*2))
 
 
             prediction_list = torch.zeros(size=[prediction_horizon]).to(device)
@@ -231,7 +231,7 @@ def train(
                     optimizer.zero_grad()
                                     
                     x = data_tensor[batch_idx*prediction_input_size    :(batch_idx+1)*prediction_input_size]+(((2*torch.rand(size=[prediction_input_size],device=device)-1)/(_divition_factr*2)))
-                    y = data_tensor[(batch_idx+1)*prediction_input_size:(batch_idx+1)*prediction_input_size+prediction_horizon]
+                    y = data_tensor[(batch_idx+1)*prediction_input_size:(batch_idx+1)*prediction_input_size+prediction_horizon]+((2*torch.rand(size=[prediction_horizon],device=device)-1)/(_divition_factr*2))
 
                     prediction_list = torch.zeros(size=[prediction_horizon]).to(device)
                     decoder_hidden, decoder_cell = torch.zeros(size=[2,prediction_input_size],device=device), torch.zeros(size=[2,prediction_input_size],device=device)
