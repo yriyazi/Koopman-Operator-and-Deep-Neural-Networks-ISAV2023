@@ -29,7 +29,7 @@ def cacl_loss_Koopman(model,
 
     optimizer.zero_grad()
     with torch.inference_mode():
-        _data = data[:,(batch*prediction_input_size)+i    :((batch+1)*prediction_input_size)+i]+(
+        _data = data[:,(batch*prediction_input_size)    :((batch+1)*prediction_input_size)]+(
                                                         (2*torch.rand(size=[prediction_input_size],device=device)-1)/(_divition_factr*2))
          # give input at time t_0
         input_for_koopman = model.encoder.forward(_data.cuda())[0].detach()

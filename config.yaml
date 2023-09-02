@@ -3,7 +3,7 @@ num_epochs              : 2
 seed                    : 42
 
 datasets  :
-  Noise_division_factor : 7
+  Noise_division_factor : 2
 
 model :
   name                    : "CNN-RNN"
