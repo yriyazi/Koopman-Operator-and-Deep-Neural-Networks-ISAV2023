@@ -19,7 +19,10 @@ Eigen                       = config['loss']['Eigen']
 model_name              = config['model']['name']
 prediction_horizon      = config['model']['prediction_horizon']
 prediction_input_size   = config['model']['prediction_input_size']
-
+# Encoder
+Inception_NumLayers     = config['model']['Inception_NumLayers']
+#Koopman
+Koopman_prediction_horizon= config['model']['Koopman_prediction_horizon']
 # Decoder
 RNN_NumLayer            = config['model']['RNN_NumLayer']
 

@@ -3,7 +3,7 @@ import Model
 import Utils
 import torch.nn             as nn
 import torch.optim          as optim
-
+import Utils
 device = 'cuda'
 
 
@@ -11,16 +11,17 @@ device = 'cuda'
 criterion_Koopman = torch.nn.MSELoss()
 
 def cacl_loss_Koopman(model,
-                      Koopman_prediction_horizon,
-                      prediction_input_size,
                       data,
                       batch,
                       _divition_factr,
                       optimizer,
                       criterion = criterion_Koopman,
-                      Koopman_hidden_size = 800
+                      Koopman_prediction_horizon    = Utils.Koopman_prediction_horizon,
+                      prediction_input_size         = Utils.prediction_input_size,
+                      Koopman_hidden_size           = Utils.prediction_input_size,
                       ):
     #PlaceHolder
+    Koopman_hidden_size = Koopman_hidden_size*Utils.Inception_NumLayers
     Koopman_y       = torch.zeros(size = [Koopman_prediction_horizon,Koopman_hidden_size,Koopman_hidden_size],device=device)
     Koopman_pred    = torch.zeros(size = [Koopman_prediction_horizon,Koopman_hidden_size,Koopman_hidden_size],device=device)
 
@@ -47,7 +48,6 @@ def cacl_loss_Koopman(model,
         # Koopman_Evolution[i+1,:,:] = _Koopman_Evolution.detach().clone()
 
         Koopman_pred[i,:,:] = torch.matmul(input_for_koopman.detach().clone(),_Koopman_Evolution.t())
-
 
     loss = criterion(Koopman_pred,Koopman_y)
     loss.backward()

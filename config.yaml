@@ -1,5 +1,5 @@
 # Model hyperparameters
-num_epochs              : 2
+num_epochs              : 1
 seed                    : 42
 
 datasets  :
@@ -7,10 +7,12 @@ datasets  :
 
 model :
   name                    : "CNN-RNN"
-  prediction_horizon      : 50
-  prediction_input_size   : 200
+  prediction_horizon      : 75
+  prediction_input_size   : 400
   # Encoder
-
+  Inception_NumLayers     : 4
+  #Koopman
+  Koopman_prediction_horizon : 20
   # Decoder
   RNN_NumLayer            : 2
 

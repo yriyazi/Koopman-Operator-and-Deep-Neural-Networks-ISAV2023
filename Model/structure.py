@@ -28,7 +28,8 @@ class Encoder_Decoder(nn.Module):
     """
 
     def __init__(self,
-                 prediction_input_size: int = Utils.prediction_input_size)->None:
+                 #prediction_input_size: int = Utils.prediction_input_size
+                 )->None:
         """
         Initialize the Encoder_Decoder instance.
 
@@ -36,8 +37,8 @@ class Encoder_Decoder(nn.Module):
             prediction_input_size (int): The size of the input data for prediction.
         """
         super(Encoder_Decoder, self).__init__()
-        self.prediction_input_size = prediction_input_size
-        self.hidden_dim = prediction_input_size * 4
+        self.prediction_input_size  = Utils.prediction_input_size
+        self.hidden_dim             = Utils.prediction_input_size * Utils.Inception_NumLayers
 
         # Initialize encoder and decoder
         self.encoder = InceptionBlock()

@@ -163,9 +163,8 @@ def train(
             # Update model parameters
             optimizer.step()
 
-            model , loss_2 = Loss.cacl_loss_Koopman(model=model,
-                                                        Koopman_prediction_horizon = 20,
-                                                        prediction_input_size = 200,
+            model , loss_2 = Loss.cacl_loss_Koopman(
+                                                        model=model,
                                                         data = data_tensor.unsqueeze(0),
                                                         batch= batch_idx,
                                                         _divition_factr = _divition_factr,
