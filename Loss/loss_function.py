@@ -8,6 +8,7 @@ class custum_loss(nn.Module):
         self.alpha  = alpha
 
     def _eigen(layer_output):
+        # this term in loss function leads nothing
         return torch.real(torch.linalg.eigvals(layer_output).mean())
 
     def forward(self, 

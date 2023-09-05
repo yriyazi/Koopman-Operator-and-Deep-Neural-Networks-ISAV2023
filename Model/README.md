@@ -17,9 +17,6 @@ The "Model" folder contains modules and files related to neural network architec
 
 The "Model" folder is dedicated to various aspects of neural network implementation, such as layer structures, and optimization techniques. These components play a crucial role in defining and training neural networks for different tasks.
 
-
-
-
 ## Contributing
 
 Contributions to the "Model" folder are welcome! If you have improvements to suggest or want to add new components, feel free to open a pull request.
