@@ -21,11 +21,11 @@ Duffing Solutions
 <img src="Images\3d_phase_space_animation.gif" alt="GIF Example">
 </p>
 
-This repository contains the code and resources related to the paper titled "Leveraging Koopman Operators and Deep Neural Networks for Parameter Estimation and Future Prediction of Duffing Oscillators." In this work, we present a novel approach that combines the power of Koopman operators and deep neural networks to generate a linear representation of the Duffing oscillator. This approach enables effective parameter estimation and accurate prediction of the oscillator's future behavior. We also propose a modified loss function that enhances the training process of the deep neural network. The synergistic use of Koopman operators and deep neural networks not only simplifies the analysis of nonlinear systems but also opens up new avenues for advancing predictive modeling in various scientific and engineering fields.
+This repository contains the code and resources related to the paper titled "Leveraging Koopman Operators and Deep Neural Networks for Parameter Estimation and Future Prediction of Duffing Oscillators." In this work, we present a novel approach that combines the power of Koopman operators and deep neural networks to generate a linear representation of the Duffing oscillator. This approach enables effective parameter estimation and accurate prediction of the oscillator's future behavior. We also propose a modified loss function that enhances the training process of the deep neural network. The synergistic use of Koopman operators and deep neural networks simplifies the analysis of nonlinear systems. It opens new avenues for advancing predictive modeling in various scientific and engineering fields.
 
 ## Abstract
 
-The study of nonlinear dynamical systems has been fundamental across a range of scientific and engineering domains due to their applicability in modeling real-world phenomena. Traditional methods for analyzing and predicting the behavior of such systems often rely on complex mathematical techniques and numerical simulations. This paper introduces an innovative approach that harnesses the combined potential of Koopman operators and deep neural networks. By generating a linear representation of the Duffing oscillator, we facilitate effective parameter estimation and achieve accurate predictions of its future behavior. Additionally, we propose a modified loss function that refines the training process of the deep neural network. The synergy between Koopman operators and deep neural networks not only simplifies the analysis of nonlinear systems but also holds promise for advancing predictive modeling across diverse fields.
+The study of nonlinear dynamical systems has been fundamental across various scientific and engineering domains due to their applicability in modeling real-world phenomena. Traditional methods for analyzing and predicting the behavior of such systems often rely on complex mathematical techniques and numerical simulations. This paper introduces an innovative approach that harnesses the combined potential of Koopman operators and deep neural networks. By generating a linear representation of the Duffing oscillator, we facilitate effective parameter estimation and achieve accurate predictions of its future behavior. Additionally, we propose a modified loss function that refines the training process of the deep neural network. The synergy between Koopman operators and deep neural networks simplifies the analysis of nonlinear systems and holds promise for advancing predictive modeling across diverse fields.
 
 ## Contents of the Repository
 
@@ -43,7 +43,7 @@ The study of nonlinear dynamical systems has been fundamental across a range of 
 
 ## Getting Started
 
-To get started with using the code and reproducing the results presented in the paper, please refer to the `notebooks/` directory. The Jupyter notebooks provide a clear guide on how to set up the environment, preprocess data, execute code, and interpret the results.
+To start using the code and reproducing the results presented in the paper, please refer to the `notebooks/` directory. The Jupyter notebooks provide a clear guide on how to set up the environment, preprocess data, execute code, and interpret the results.
 
 ## Citation
 
@@ -59,6 +59,6 @@ If you find this work helpful or build upon it in your research, please consider
 
 ## Contact
 
-For any inquiries, issues, or collaboration opportunities, please contact [iyasiniyasin98@gmail.com].
+If you have any questions, issues, or collaboration opportunities, please contact [iyasiniyasin98@gmail.com].
 
-We hope that the approach introduced in this paper will inspire further advancements in the analysis and prediction of nonlinear dynamical systems. Happy researching!
+We hope the approach introduced in this paper will inspire further advancements in analyzing and predicting nonlinear dynamical systems. Happy researching!
