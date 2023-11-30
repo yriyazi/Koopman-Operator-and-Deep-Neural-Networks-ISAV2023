@@ -50,7 +50,7 @@ To get started with using the code and reproducing the results presented in the 
 If you find this work helpful or build upon it in your research, please consider citing the following paper:
 
 ```
-[Author(s). (Year). Title of the Paper. Journal/Conference Name, Volume(Issue), Page Numbers. DOI]
+[Yassin Riyazi, Navidreza Ghanbari, Arash Bahrami*. 2023. "Leveraging Koopman Operators and Deep Neural Networks for Parameter Estimation and Future Prediction of Duffing Oscillators." ISAV, 2023, Page Numbers. DOI]
 ```
 <p float="center">
 <img src="Images\alpha = 0000 gamma=0.37.png" alt="GIF Example">
@@ -59,6 +59,6 @@ If you find this work helpful or build upon it in your research, please consider
 
 ## Contact
 
-For any inquiries, issues, or collaboration opportunities, please contact [author@email.com].
+For any inquiries, issues, or collaboration opportunities, please contact [iyasiniyasin98@gmail.com].
 
 We hope that the approach introduced in this paper will inspire further advancements in the analysis and prediction of nonlinear dynamical systems. Happy researching!
