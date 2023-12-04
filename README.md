@@ -45,6 +45,13 @@ The study of nonlinear dynamical systems has been fundamental across various sci
 
 To start using the code and reproducing the results presented in the paper, please refer to the `notebooks/` directory. The Jupyter notebooks provide a clear guide on how to set up the environment, preprocess data, execute code, and interpret the results.
 
+<!-- ![Example GIF](Images\3d_phase_space_animation.gif) -->
+<p float="center">
+<img src="Duffing_Solution\results\Poncare section\Poincaré Map of the Duffing OscillatorFrames=600 points=800 All=True gamma=0.37 omega=1.2 beta=1 alpha=-1.0 delta=0.3.gif" alt="GIF Example">
+</p>
+
+
+
 ## Citation
 
 If you find this work helpful or build upon it in your research, please consider citing the following paper:
