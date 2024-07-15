@@ -1,0 +1,205 @@
+Folder PATH listing for volume Work
+Volume serial number is 52A1-B650
+E:.
+|   config.yaml
+|   directory_tree.txt
+|   LICENSE
+|   README.md
+|   test.py
+|   Train.ipynb
+|   
++---.Ignore
+|       Loader.ipynb
+|       
++---.vscode
+|       settings.json
+|       
++---Deeplearning
+|   |   Base.py
+|   |   README.md
+|   |   __init__.py
+|   |   
+|   \---__pycache__
+|           Base.cpython-311.pyc
+|           Base.cpython-39.pyc
+|           __init__.cpython-311.pyc
+|           __init__.cpython-39.pyc
+|           
++---Duffing_Solution
+|   |   Duffing.ipynb
+|   |   Duffing_Runge-Kutta.ipynb
+|   |   PhaseSpace_3d.py
+|   |   Poincare.ipynb
+|   |   poncare_scater.py
+|   |   poncare_scater_all.py
+|   |   README.md
+|   |   
+|   +---dataloaders
+|   |   |   Runge_Kutta.py
+|   |   |   __init__.py
+|   |   |   
+|   |   \---__pycache__
+|   |           Runge_Kutta.cpython-38.pyc
+|   |           Runge_Kutta.cpython-39.pyc
+|   |           __init__.cpython-38.pyc
+|   |           __init__.cpython-39.pyc
+|   |           
+|   +---datasets
+|   |   |   duffing_euqation.py
+|   |   |   gamma=0.2 t_span=(0, 50000) initial_conditions=[-0.5, 0.5] step_frequency=001.npy
+|   |   |   gamma=0.2 t_span=(0, 50000) initial_conditions=[-0.5, 0.5] step_frequency=010.npy
+|   |   |   gamma=0.2 t_span=(0, 50000) initial_conditions=[0.5, 0.0] step_frequency=001.npy
+|   |   |   gamma=0.2 t_span=(0, 50000) initial_conditions=[0.5, 0.0] step_frequency=010.npy
+|   |   |   gamma=0.2 t_span=(0, 50000) initial_conditions=[1.5, -1.5] step_frequency=001.npy
+|   |   |   gamma=0.2 t_span=(0, 50000) initial_conditions=[1.5, -1.5] step_frequency=010.npy
+|   |   |   gamma=0.2 t_span=(0, 50000) initial_conditions=[1.5, 1.5] step_frequency=001.npy
+|   |   |   gamma=0.2 t_span=(0, 50000) initial_conditions=[1.5, 1.5] step_frequency=010.npy
+|   |   |   gamma=0.37 t_span=(0, 50000) initial_conditions=[-0.5, 0.5] step_frequency=001.npy
+|   |   |   gamma=0.37 t_span=(0, 50000) initial_conditions=[-0.5, 0.5] step_frequency=010.npy
+|   |   |   gamma=0.37 t_span=(0, 50000) initial_conditions=[0.5, 0.0] step_frequency=001.npy
+|   |   |   gamma=0.37 t_span=(0, 50000) initial_conditions=[0.5, 0.0] step_frequency=010.npy
+|   |   |   gamma=0.37 t_span=(0, 50000) initial_conditions=[1.5, -1.5] step_frequency=001.npy
+|   |   |   gamma=0.37 t_span=(0, 50000) initial_conditions=[1.5, -1.5] step_frequency=010.npy
+|   |   |   gamma=0.37 t_span=(0, 50000) initial_conditions=[1.5, 1.5] step_frequency=001.npy
+|   |   |   gamma=0.37 t_span=(0, 50000) initial_conditions=[1.5, 1.5] step_frequency=010.npy
+|   |   |   saving.py
+|   |   |   __init__.py
+|   |   |   
+|   |   \---__pycache__
+|   |           duffing_euqation.cpython-38.pyc
+|   |           duffing_euqation.cpython-39.pyc
+|   |           saving.cpython-39.pyc
+|   |           __init__.cpython-38.pyc
+|   |           __init__.cpython-39.pyc
+|   |           
+|   +---generator
+|   |   |   __init__.py
+|   |   |   
+|   |   \---__pycache__
+|   |           __init__.cpython-311.pyc
+|   |           
+|   +---results
+|   |   +---3d phase plane
+|   |   |       3d_phase_space_animation.mp4
+|   |   |       
+|   |   +---General solution
+|   |   |       Duffing Oscillator (?=0.15, ?=-1.0, ?=1, ?=0.5, ?=0.8).png
+|   |   |       Duffing Oscillator (?=0.2, ?=-1.0, ?=1, ?=0.3, ?=1.2).png
+|   |   |       Duffing Oscillator (?=0.3, ?=-1.0, ?=1, ?=0.3, ?=1.2).png
+|   |   |       Duffing Oscillator (?=0.3, ?=-1.0, ?=1, ?=0.6, ?=1.2).png
+|   |   |       Duffing Oscillator (?=0.3, ?=-1.0, ?=1, ?=0.6, ?=1.5).png
+|   |   |       
+|   |   +---Gneral Solution and phase plane
+|   |   |       Duffing Oscillator (?=0.3, ?=-1.0, ?=1, ?=0.2, ?=1.2).png
+|   |   |       Duffing Oscillator (?=0.3, ?=-1.0, ?=1, ?=0.28, ?=1.2).png
+|   |   |       Duffing Oscillator (?=0.3, ?=-1.0, ?=1, ?=0.29, ?=1.2).png
+|   |   |       Duffing Oscillator (?=0.3, ?=-1.0, ?=1, ?=0.37, ?=1.2).png
+|   |   |       Duffing Oscillator (?=0.3, ?=-1.0, ?=1, ?=0.5, ?=1.2).png
+|   |   |       Duffing Oscillator (?=0.3, ?=-1.0, ?=1, ?=0.65, ?=1.2).png
+|   |   |       
+|   |   \---Poncare section
+|   |           dd.mp4
+|   |           Poincar‚ Map of the Duffing OscillatorFrames=300 points=600 gamma=0.2 omega=1.2 beta=1 alpha=-1.0 delta=0.3.gif
+|   |           Poincar‚ Map of the Duffing OscillatorFrames=300 points=600 gamma=0.28 omega=1.2 beta=1 alpha=-1.0 delta=0.3.gif
+|   |           Poincar‚ Map of the Duffing OscillatorFrames=300 points=600 gamma=0.29 omega=1.2 beta=1 alpha=-1.0 delta=0.3.gif
+|   |           Poincar‚ Map of the Duffing OscillatorFrames=600 points=800 All=True gamma=0.37 omega=1.2 beta=1 alpha=-1.0 delta=0.3.gif
+|   |           
+|   \---utils
+|       |   plot.py
+|       |   __init__.py
+|       |   
+|       \---__pycache__
+|               plot.cpython-39.pyc
+|               __init__.cpython-39.pyc
+|               
++---Images
+|   |   3d_phase_space_animation.gif
+|   |   Acceleration vs. Prediction.png
+|   |   alpha = 0000 gamma=0.37 orgi.png
+|   |   alpha = 0000 gamma=0.37.png
+|   |   Duffing Oscillator (?=0.3, ?=-1.0, ?=1, ?=0.2, ?=1.2).png
+|   |   Duffing Oscillator (?=0.3, ?=-1.0, ?=1, ?=0.29, ?=1.2).png
+|   |   Duffing Oscillator (?=0.3, ?=-1.0, ?=1, ?=0.37, ?=1.2).png
+|   |   Duffing Oscillator (?=0.3, ?=-1.0, ?=1, ?=0.5, ?=1.2).png
+|   |   Gprediction alpha=10.png
+|   |   Gprediction alpha=40.png
+|   |   neural net = CNN-RNN dataset parameters =None index=800.png
+|   |   Robustness against gamma.jpg
+|   |   Robustness against initial conditions.jpg
+|   |   Robustness against Noises.jpg
+|   |   
+|   \---Results
+|           Koopamn Koopman gamma=0.37.svg
+|           Robustness against Noise gamma=0.20 [N].svg
+|           Robustness against Noise gamma=0.20.svg
+|           Robustness against Noise gamma=0.37 [N].svg
+|           Robustness against Noise gamma=0.37.svg
+|           
++---Loss
+|   |   Koopman_repeat.py
+|   |   loss_function.py
+|   |   README.md
+|   |   __init__.py
+|   |   
+|   \---__pycache__
+|           Koopman_repeat.cpython-311.pyc
+|           loss_function.cpython-311.pyc
+|           __init__.cpython-311.pyc
+|           
++---Model
+|   |   decoder.py
+|   |   encoder.py
+|   |   README.md
+|   |   structure.py
+|   |   __init__.py
+|   |   
+|   \---__pycache__
+|           decoder.cpython-311.pyc
+|           encoder.cpython-311.pyc
+|           structure.cpython-311.pyc
+|           __init__.cpython-311.pyc
+|           
++---Saved
+|   |   Gamma =0.2 step_frequency=010 prediction_input_size=200 cu_loss=False init=(1.5, -1.5) noise_factor=2.pt
+|   |   Gamma =0.2 step_frequency=010 prediction_input_size=200 cu_loss=False init=(1.5, -1.5) noise_factor=2_report.csv
+|   |   Gamma =0.37 step_frequency=010 prediction_input_size=200 cu_loss=False init=(1.5, -1.5) noise_factor=2.pt
+|   |   Gamma =0.37 step_frequency=010 prediction_input_size=200 cu_loss=False init=(1.5, -1.5) noise_factor=2_report.csv
+|   |   
+|   \---.Checkpoints
+|           ckpt_Gamma =0.2 step_frequency=010 prediction_input_size=200 cu_loss=False init=(1.5, -1.5) noise_factor=2_epoch1.ckpt
+|           ckpt_Gamma =0.37 step_frequency=010 prediction_input_size=200 cu_loss=False init=(1.5, -1.5) noise_factor=2_epoch1.ckpt
+|           
+\---Utils
+    |   configuration.py
+    |   Eigen_values.py
+    |   utils.py
+    |   __init__.py
+    |   
+    +---Plot
+    |   |   Koopman_Eigenvalue.py
+    |   |   Plot.py
+    |   |   
+    |   +---Koopman_Eigenvalues
+    |   |       Eigenvalues.pdf
+    |   |       neural net = RNN dataset parameters =?=0.3, ?=-1.0, ?=1, ?=0.37, ?=1.2 ,t_span=(0, 1000) index=256.png
+    |   |       neural net = RNN dataset parameters =?=0.3, ?=-1.0, ?=1, ?=0.5, ?=1.2 ,t_span=(0, 1000) index=256.png
+    |   |       neural net = RNN dataset parameters =?=0.3, ?=-1.0, ?=1, ?=0.6, ?=1.2 ,t_span=(0, 1000) index=256.png
+    |   |       neural net = RNN dataset parameters =?=0.3, ?=-1.0, ?=1, ?=0.65, ?=1.2 ,t_span=(0, 1000) index=256.png
+    |   |       
+    |   \---__pycache__
+    |           Koopman_Eigenvalue.cpython-311.pyc
+    |           Koopman_Eigenvalue.cpython-312.pyc
+    |           Koopman_Eigenvalue.cpython-39.pyc
+    |           Plot.cpython-311.pyc
+    |           Plot.cpython-312.pyc
+    |           
+    \---__pycache__
+            configuration.cpython-311.pyc
+            configuration.cpython-312.pyc
+            Eigen_values.cpython-311.pyc
+            Eigen_values.cpython-312.pyc
+            utils.cpython-311.pyc
+            utils.cpython-312.pyc
+            __init__.cpython-311.pyc
+            __init__.cpython-312.pyc
+            

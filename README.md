@@ -29,22 +29,27 @@ The study of nonlinear dynamical systems has been fundamental across various sci
 
 ## Contents of the Repository
 
-- `Loss/`: This directory contains the implementation of the methodology described in the paper. It includes code for generating Koopman operators.
-
-- `Duffing_Solution/`: This directory holds the datasets used for training and testing the model. It includes synthetic data of Duffing oscillator.
-
-- `Deeplearning/`: This directory holds the function for training the deep neural networks.
-
-- ![`Saved/`](Saved): Pytorch Pre-trained models.
-
-- `.`: A jupyter file named "Train.ipynb" which contains the training code for training from scratch.
-
+- [Loss/](Loss/README.md): This directory contains the implementation of the methodology described in the paper. It includes code for generating Koopman operators.
+- [Duffing_Solution/](Duffing_Solution/README.md): This directory holds the datasets used for training and testing the model. It includes synthetic data of Duffing oscillator.
+- [Deeplearning/](Deeplearning/README.md): This directory holds the function for training the deep neural networks.
+- [Saved/](Saved): Pytorch Pre-trained models and checkpoints.
+- [Model/](Model/README.md): Directory containing the encoder and decoder models.
+- [Utils/](Utils): Utility functions and scripts.
+- [Images/](Images): Contains images and gifs used for visualization.
+- [.vscode/](.vscode): Contains VSCode settings.
+- [.Ignore/](.Ignore): Directory with files to be ignored by version control.
+- [config.yaml](config.yaml): Configuration file.
+- [directory_tree.txt](directory_tree.txt): Directory structure of the project.
+- [LICENSE](LICENSE): License file.
+- [README.md](README.md): Readme file.
+- [test.py](test.py): Test script.
+- [Train.ipynb](Train.ipynb): Jupyter notebook for training the model from scratch.
 
 ## Getting Started
 
-To start using the code and reproducing the results presented in the paper, please refer to the `./` directory. The Jupyter notebooks provide a clear guide on how to set up the environment, preprocess data, execute code, and interpret the results. Also it is expexted to you have installed a version of pytorch>1.2 . For Pytroch installetion please refer to ![Pytorch](https://pytorch.org/).
+To start using the code and reproducing the results presented in the paper, please refer to the `./` directory. The Jupyter notebooks provide a clear guide on how to set up the environment, preprocess data, execute code, and interpret the results. Also it is expected that you have installed a version of pytorch>1.2. For Pytorch installation please refer to [Pytorch](https://pytorch.org/).
 
-For seeing a demo Please run the test.py file.
+For seeing a demo, please run the test.py file.
 
 
 <!-- ![Example GIF](Images\3d_phase_space_animation.gif) -->

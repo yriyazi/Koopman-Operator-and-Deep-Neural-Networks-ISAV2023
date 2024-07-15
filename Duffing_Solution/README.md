@@ -1,0 +1,1 @@
+In this directory are codes for generating and visualizing Duffing oscillators synthetic data.
