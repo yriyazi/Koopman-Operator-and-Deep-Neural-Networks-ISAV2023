@@ -1,5 +1,5 @@
 # Leveraging Koopman Operators and Deep Neural Networks for Parameter Estimation and Future Prediction of Duffing Oscillators (ISAV_2023)
-<p> Updated</p>
+<p> Updated July 15 2024</p>
 <!-->
 <p float="center">
   <img src="Images\Duffing Oscillator (δ=0.3, α=-1.0, β=1, γ=0.2, ω=1.2).png"  />
@@ -29,21 +29,23 @@ The study of nonlinear dynamical systems has been fundamental across various sci
 
 ## Contents of the Repository
 
-- `code/`: This directory contains the implementation of the methodology described in the paper. It includes code for generating Koopman operators, training deep neural networks, parameter estimation, and future prediction of Duffing oscillators.
+- `Loss/`: This directory contains the implementation of the methodology described in the paper. It includes code for generating Koopman operators.
 
-- `data/`: This directory holds the datasets used for training and testing the model. It includes both synthetic data and real-world Duffing oscillator data.
+- `Duffing_Solution/`: This directory holds the datasets used for training and testing the model. It includes synthetic data of Duffing oscillator.
 
-- `results/`: After running the code, the generated results, including parameter estimates, predicted trajectories, and evaluation metrics, will be saved in this directory.
+- `Deeplearning/`: This directory holds the function for training the deep neural networks.
 
-- `notebooks/`: Jupyter notebooks are provided to demonstrate the step-by-step process of using the code for Koopman operator analysis, deep neural network training, and prediction generation.
+- `Saved/`: Pytorch Pre-trained models.
 
-- `images/`: This directory contains images and plots used in the paper and the README.
+- `.`: A jupyter file named "Train.ipynb" which contains the training code for training from scratch.
 
-- `LICENSE`: The license file associated with this repository.
 
 ## Getting Started
 
-To start using the code and reproducing the results presented in the paper, please refer to the `notebooks/` directory. The Jupyter notebooks provide a clear guide on how to set up the environment, preprocess data, execute code, and interpret the results.
+To start using the code and reproducing the results presented in the paper, please refer to the `./` directory. The Jupyter notebooks provide a clear guide on how to set up the environment, preprocess data, execute code, and interpret the results. Also it is expexted to you have installed a version of pytorch>1.2 . For Pytroch installetion please refer to ![Pytorch](https://pytorch.org/).
+
+For seeing a demo Please run the test.py file.
+
 
 <!-- ![Example GIF](Images\3d_phase_space_animation.gif) -->
 <p float="center">

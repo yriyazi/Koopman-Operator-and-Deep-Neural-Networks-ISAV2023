@@ -13,7 +13,7 @@ import torch.optim          as optim
 Utils.set_seed(42)
 device = 'cuda'
 
-npz_file_path = "Duffing_Soulution\datasets\gamma=0.37 t_span=(0, 100000) initial_conditions=[0, 0.5].npy"
+npz_file_path = os.path.join(os.getcwd(),"Duffing_Solution","datasets","gamma=0.37 t_span=(0, 50000) initial_conditions=[1.5, 1.5] step_frequency=010.npy")
 loaded_data = Utils.read_npz_file(npz_file_path)
 #%%
 prediction_horizion     = 50
@@ -22,10 +22,11 @@ epochs                  = 1
 _divition_factr         = 7
 _alpha                  = 40
 
-directory_path = "Saved\inception.pt"
+
+directory_path = os.path.join(os.getcwd(),"Saved","Gamma =0.37 step_frequency=010 prediction_input_size=200 cu_loss=False init=(1.5, -1.5) noise_factor=2.pt")
 #%%
 data_tensor = torch.from_numpy(loaded_data).to(device=device).to(torch.float)
-inception = Model.Encoder_Decoder(prediction_input_size).to(device)
+inception = Model.Encoder_Decoder().to(device)
 
 inception.load_state_dict(torch.load(os.path.join(directory_path)))
 inception.eval()
