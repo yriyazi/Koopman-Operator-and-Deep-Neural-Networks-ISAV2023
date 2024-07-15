@@ -35,7 +35,7 @@ The study of nonlinear dynamical systems has been fundamental across various sci
 
 - `Deeplearning/`: This directory holds the function for training the deep neural networks.
 
-- `Saved/`: Pytorch Pre-trained models.
+- ![`Saved/`](Saved): Pytorch Pre-trained models.
 
 - `.`: A jupyter file named "Train.ipynb" which contains the training code for training from scratch.
 
