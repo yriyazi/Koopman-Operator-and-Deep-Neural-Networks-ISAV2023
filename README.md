@@ -1,78 +1,112 @@
-# Leveraging Koopman Operators and Deep Neural Networks for Parameter Estimation and Future Prediction of Duffing Oscillators (ISAV_2023)
-<p> Updated July 15 2024</p>
-<!-->
-<p float="center">
-  <img src="Images\Duffing Oscillator (δ=0.3, α=-1.0, β=1, γ=0.2, ω=1.2).png"  />
-</p>
-<-->
+# Leveraging Koopman Operators and Deep Neural Networks for Duffing Oscillators (ISAV 2023)
 
-<p float="center">
-  <img src="Images\Duffing Oscillator (δ=0.3, α=-1.0, β=1, γ=0.29, ω=1.2).png"  />
-</p>
+Harnessing Koopman theory and modern deep learning, this repository delivers a full-stack toolkit for **parameter estimation, prediction, and qualitative analysis** of nonlinear Duffing oscillators. Beyond reproducing our ISAV 2023 results, the project ships with curated datasets, reusable model components, visualization dashboards, and automation utilities for exploring rich dynamical regimes—from periodic motion to fully developed chaos.
 
-<p float="center">
-  <img src="Images\Duffing Oscillator (δ=0.3, α=-1.0, β=1, γ=0.37, ω=1.2).png"  />
-</p>
+> 📅 Last major refresh: July 2024 — the project continues to evolve with improved notebooks, richer datasets, and better visualization support.
 
-Duffing Solutions
+![Duffing dynamics montage](Images/Duffing%20Oscillator%20(δ=0.3,%20α=-1.0,%20β=1,%20γ=0.37,%20ω=1.2).png)
 
-![Example GIF](Images\3d_phase_space_animation.gif)
-<p float="center">
-<img src="Images\3d_phase_space_animation.gif" alt="GIF Example">
-</p>
+![3D phase space animation](Images/3d_phase_space_animation.gif)
 
-This repository contains the code and resources related to the paper titled "Leveraging Koopman Operators and Deep Neural Networks for Parameter Estimation and Future Prediction of Duffing Oscillators." In this work, we present a novel approach that combines the power of Koopman operators and deep neural networks to generate a linear representation of the Duffing oscillator. This approach enables effective parameter estimation and accurate prediction of the oscillator's future behavior. We also propose a modified loss function that enhances the training process of the deep neural network. The synergistic use of Koopman operators and deep neural networks simplifies the analysis of nonlinear systems. It opens new avenues for advancing predictive modeling in various scientific and engineering fields.
+---
 
-## Abstract
+## Why This Project Stands Out
 
-The study of nonlinear dynamical systems has been fundamental across various scientific and engineering domains due to their applicability in modeling real-world phenomena. Traditional methods for analyzing and predicting the behavior of such systems often rely on complex mathematical techniques and numerical simulations. This paper introduces an innovative approach that harnesses the combined potential of Koopman operators and deep neural networks. By generating a linear representation of the Duffing oscillator, we facilitate effective parameter estimation and achieve accurate predictions of its future behavior. Additionally, we propose a modified loss function that refines the training process of the deep neural network. The synergy between Koopman operators and deep neural networks simplifies the analysis of nonlinear systems and holds promise for advancing predictive modeling across diverse fields.
+- **Unified Koopman + Deep Learning Pipeline**: Learn Koopman embeddings, train neural decoders, and perform long-horizon forecasting in one coherent codebase.
+- **Rich Dynamical Exploration**: Generate and analyze Duffing trajectories across forcing amplitudes, damping ratios, initial conditions, sampling rates, and noise factors.
+- **Visualization Playground**: Produce time-series overlays, 2D/3D phase portraits, Poincaré sections, bifurcation-inspired scans, and publication-ready animations.
+- **Research-Grade Assets**: Includes pre-trained weights, metric logs, and scripts to reproduce the experiments from both the ISAV 2023 paper and the extended 2024 journal article.
 
-## Contents of the Repository
+---
 
-- [Loss/](Loss/README.md): This directory contains the implementation of the methodology described in the paper. It includes code for generating Koopman operators.
-- [Duffing_Solution/](Duffing_Solution/README.md): This directory holds the datasets used for training and testing the model. It includes synthetic data of Duffing oscillator.
-- [Deeplearning/](Deeplearning/README.md): This directory holds the function for training the deep neural networks.
-- [Saved/](Saved): Pytorch Pre-trained models and checkpoints.
-- [Model/](Model/README.md): Directory containing the encoder and decoder models.
-- [Utils/](Utils): Utility functions and scripts.
-- [Images/](Images): Contains images and gifs used for visualization.
-- [.vscode/](.vscode): Contains VSCode settings.
-- [.Ignore/](.Ignore): Directory with files to be ignored by version control.
-- [config.yaml](config.yaml): Configuration file.
-- [directory_tree.txt](directory_tree.txt): Directory structure of the project.
-- [LICENSE](LICENSE): License file.
-- [README.md](README.md): Readme file.
-- [test.py](test.py): Test script.
-- [Train.ipynb](Train.ipynb): Jupyter notebook for training the model from scratch.
+## Project Highlights at a Glance
+
+### 🔍 Dynamical Analysis Suite
+- **Time-domain profiling**: Compare displacement, velocity, and acceleration responses for multiple forcing regimes.
+- **Phase-plane insights**: Study limit cycles and chaotic attractors via 2D projections (`Duffing_Solution/results/General solution` and `3d phase plane`).
+- **3D phase trajectories**: Leverage `PhaseSpace_3d.py` and companion notebooks for interactive exploration of `(x, v, cos(ωt))` embeddings.
+- **Poincaré mapping**: Generate dense return maps and animated sweeps (`Duffing_Poincare_Map_Generator.ipynb`, `poncare_scater*.py`) to expose quasi-periodic windows and chaotic seas.
+- **Dataset factory**: Systematically synthesize long-horizon trajectories with controlled sampling cadence and metadata-rich filenames for traceability.
+
+### 🧠 Koopman-Infused Deep Learning
+- **Encoder–decoder architectures** (`Model/structure.py`, `encoder.py`, `decoder.py`) tailored for Koopman representations.
+- **Custom losses** (`Loss/loss_function.py`, `Loss/Koopman_repeat.py`) balancing reconstruction fidelity, Koopman consistency, and regularization.
+- **Training engine** (`Deeplearning/Base.py`, `Deeplearning/README.md`) with configuration-driven workflows defined in `config.yaml`.
+- **Experiment tracking** via CSV reports and checkpoints stored under `Saved/` for rapid evaluation or fine-tuning.
+
+### 🧰 Utilities & Support Code
+- **Numerical solvers**: High-precision Runge-Kutta integrators (`Duffing_Solution/dataloaders/Runge_Kutta.py`) and helper routines (`Duffing_Solution/utils/`).
+- **Visualization helpers**: Consistent plotting utilities and animation scripts for consistent figure generation.
+- **Configuration management**: A central `Utils/configuration.py` describing datasets, network sizes, optimization parameters, and experiment modes.
+
+---
+
+## Repository Map
+
+- `Duffing_Solution/` — Data generation, numerical solvers, visualization scripts, and an enthusiastic README that doubles as a user manual.
+- `Loss/` — Koopman-aligned loss functions and training objectives.
+- `Deeplearning/` — Training loops, schedulers, logging hooks, and convenience wrappers.
+- `Model/` — Encoder/decoder definitions, Koopman operators, and structural blueprints.
+- `Utils/` — Configuration, spectral utilities, metrics, and shared helpers.
+- `Saved/` — Pre-trained PyTorch weights, evaluation summaries, and result archives.
+- `Images/` — Static figures and animated assets showcased throughout our publications.
+- `Train.ipynb` — End-to-end training walkthrough for replicating the flagship experiments.
+- `test.py` — Quick sanity check illustrating model loading and short-term forecasting.
+
+Supporting files (`config.yaml`, `directory_tree.txt`, `LICENSE`, and VS Code settings) keep the project reproducible and easy to navigate.
+
+---
 
 ## Getting Started
 
-To start using the code and reproducing the results presented in the paper, please refer to the `./` directory. The Jupyter notebooks provide a clear guide on how to set up the environment, preprocess data, execute code, and interpret the results. Also it is expected that you have installed a version of pytorch>1.2. For Pytorch installation please refer to [Pytorch](https://pytorch.org/).
+1. **Install dependencies** (Python 3.8+ recommended). We rely on PyTorch ≥ 1.12, NumPy, Matplotlib, tqdm, and related scientific libraries.
+2. **Explore datasets** via `Duffing_Dataset_Generator.ipynb` or load precomputed `.npy` files under `Duffing_Solution/datasets/`.
+3. **Run training** by launching `Train.ipynb` or executing the scripts in `Deeplearning/` with the provided configuration.
+4. **Visualize results** using the notebooks in `Duffing_Solution/` and the plotting utilities under `Utils/`.
 
-For seeing a demo, please run the test.py file.
+For a quick demo, execute `python test.py` to load a saved Koopman model and produce forecast snapshots.
 
+---
 
-<!-- ![Example GIF](Images\3d_phase_space_animation.gif) -->
-<p float="center">
-<img src="Duffing_Solution\results\Poncare section\Poincaré Map of the Duffing OscillatorFrames=600 points=800 All=True gamma=0.37 omega=1.2 beta=1 alpha=-1.0 delta=0.3.gif" alt="GIF Example">
-</p>
+## Reproducing the Paper & Extended Experiments
 
+This repository corresponds to:
 
+- **ISAV 2023 conference submission** — The original Koopman-enhanced framework for Duffing oscillators.
+- **2024 Journal of Theoretical and Applied Vibration and Acoustics article** — Expanded hyperparameter sweeps, robustness trials, and comparisons against classical estimators.
+
+Use the provided configs and checkpoints in `Saved/` to match the published metrics. Detailed experiment descriptions are available in the subdirectory READMEs.
+
+---
 
 ## Citation
 
-If you find this work helpful or build upon it in your research, please consider citing the following paper:
+If this work supports your research, please cite:
 
 ```
-[Yassin Riyazi, Navidreza Ghanbari, Arash Bahrami*. 2023. "Leveraging Koopman Operators and Deep Neural Networks for Parameter Estimation and Future Prediction of Duffing Oscillators." ISAV, 2023, Page Numbers. DOI]
-```
-<p float="center">
-<img src="Images\alpha = 0000 gamma=0.37.png" alt="GIF Example">
-</p>
+@Conference{riyazia2023leveraging,
+  title   = {Leveraging Koopman operator and Deep Neural Networks for Parameter Estimation and Future Prediction of Duffing oscillators},
+  author  = {Riyazia, Yassin and Ghanbaria, NavidReza and Bahramib, Arash},
+  year    = {2023},
+  publisher = {ISAV}
+}
 
+@article{riyazi2024hybrid,
+  title   = {Hybrid Koopman-neural network approach for robust parameter estimation and prediction in Duffing oscillators},
+  author  = {Riyazi, Yassin and Ghanbari, Navidreza and Bahrami, Arash},
+  journal = {Journal of Theoretical and Applied Vibration and Acoustics},
+  volume  = {10},
+  number  = {1},
+  pages   = {13--28},
+  year    = {2024},
+  publisher = {Iranian Society of Acoustics and Vibration and Avecina}
+}
+```
+
+---
 
 ## Contact
 
-If you have any questions, issues, or collaboration opportunities, please contact [iyasiniyasin98@gmail.com].
+Questions, comments, or collaboration ideas? Reach out at **iyasiniyasin98@gmail.com**.
 
-We hope the approach introduced in this paper will inspire further advancements in analyzing and predicting nonlinear dynamical systems. Happy researching!
+We hope this codebase sparks further advances in nonlinear system identification, Koopman-based modeling, and dynamical forecasting. Happy exploring!
