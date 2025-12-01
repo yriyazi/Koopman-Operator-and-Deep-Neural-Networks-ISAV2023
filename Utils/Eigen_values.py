@@ -1,9 +1,9 @@
 import torch
 
-def Eigen_value_calculator(data:torch.tensor)->tuple:
+def Eigen_value_calculator(data:torch.Tensor)->tuple[torch.Tensor,torch.Tensor,torch.Tensor]:
     # Compute the eigenvalues
     eigenvalues ,eigenvectors = torch.linalg.eig(data.clone().detach())
-    eigenvectors = None
+    del eigenvectors 
     
     # Extract the real and imaginary parts of the eigenvalues
     real_parts = torch.real(eigenvalues)
